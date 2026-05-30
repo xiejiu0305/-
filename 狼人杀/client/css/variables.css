@@ -1,0 +1,46 @@
+:root {
+  /* 夜间主题 */
+  --night-bg: #0a0a1a;
+  --night-surface: #141428;
+  --night-text: #e0e0e0;
+  --night-text-dim: #8888aa;
+  --night-accent: #cc3333;
+  --night-mystic: #9966cc;
+
+  /* 日间主题 */
+  --day-bg: #f5f0e8;
+  --day-surface: #fff8f0;
+  --day-text: #2a2a2a;
+  --day-text-dim: #666666;
+  --day-accent: #cc3333;
+  --day-life: #33aa55;
+
+  /* 通用 */
+  --gold: #d4a838;
+  --white: #ffffff;
+  --radius: 8px;
+  --radius-lg: 16px;
+  --shadow: 0 4px 24px rgba(0,0,0,0.15);
+  --transition: 0.3s ease;
+}
+
+/* 屏幕切换 */
+.screen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  overflow-y: auto;
+}
+
+.screen.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.screen.hidden {
+  display: none;
+}

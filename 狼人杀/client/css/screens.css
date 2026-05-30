@@ -1,0 +1,423 @@
+/* ===== Home 屏幕 ===== */
+#screen-home {
+  background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 100%);
+  align-items: center;
+  justify-content: center;
+}
+
+.home-card {
+  width: 90%;
+  max-width: 420px;
+  padding: 40px 32px;
+  border-radius: var(--radius-lg);
+  background: rgba(20, 20, 40, 0.95);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.home-title {
+  font-size: 42px;
+  font-weight: 900;
+  text-align: center;
+  color: var(--gold);
+  text-shadow: 0 0 20px rgba(212, 168, 56, 0.3);
+}
+
+.home-subtitle {
+  font-size: 14px;
+  text-align: center;
+  color: var(--night-text-dim);
+  margin-top: -12px;
+}
+
+.home-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--night-text-dim);
+  font-size: 13px;
+}
+.home-divider::before,
+.home-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--night-text-dim);
+  opacity: 0.3;
+}
+
+/* ===== Lobby 屏幕 ===== */
+#screen-lobby {
+  background: linear-gradient(135deg, #0a0a1a 0%, #1e1e3a 100%);
+  color: var(--night-text);
+  padding: 20px;
+}
+
+.lobby-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.lobby-room-code {
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: 6px;
+  color: var(--gold);
+}
+
+.lobby-hint {
+  font-size: 13px;
+  color: var(--night-text-dim);
+}
+
+.lobby-layout {
+  display: flex;
+  flex: 1;
+  gap: 20px;
+  min-height: 0;
+}
+
+.lobby-left {
+  width: 280px;
+  flex-shrink: 0;
+}
+
+.lobby-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.lobby-actions {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 16px;
+}
+
+/* ===== Night 屏幕 ===== */
+#screen-night {
+  background: radial-gradient(ellipse at top, #0d0d2b 0%, #050510 100%);
+  color: var(--night-text);
+  padding: 40px 20px 20px;
+  align-items: center;
+}
+
+.night-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.night-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--night-mystic);
+}
+
+.night-subtitle {
+  font-size: 14px;
+  color: var(--night-text-dim);
+  margin-top: 4px;
+}
+
+.night-action-area {
+  width: 100%;
+  max-width: 600px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.night-role-panel {
+  width: 100%;
+}
+
+.night-playing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  gap: 16px;
+}
+
+.night-moon {
+  font-size: 64px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.night-wait-text {
+  font-size: 18px;
+  color: var(--night-text-dim);
+}
+
+/* ===== Day 屏幕 ===== */
+#screen-day {
+  background: linear-gradient(180deg, #e8dcc8 0%, #f5f0e8 100%);
+  color: var(--day-text);
+  padding: 20px;
+}
+
+.day-header {
+  text-align: center;
+  padding: 16px 0;
+}
+
+.day-title {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.day-death-announce {
+  background: var(--day-surface);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow);
+}
+
+.death-icon {
+  font-size: 32px;
+  text-align: center;
+}
+
+.death-text {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.death-none {
+  color: var(--day-life);
+}
+
+.death-kill {
+  color: var(--day-accent);
+}
+
+.day-layout {
+  display: flex;
+  flex: 1;
+  gap: 16px;
+  min-height: 0;
+}
+
+.day-sidebar {
+  width: 240px;
+  flex-shrink: 0;
+}
+
+.day-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* ===== Voting 屏幕 ===== */
+#screen-voting {
+  background: linear-gradient(180deg, #f5f0e8 0%, #ede0cc 100%);
+  color: var(--day-text);
+  padding: 20px;
+}
+
+.voting-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.voting-title {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.voting-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 16px;
+  flex: 1;
+  align-content: start;
+}
+
+.voting-actions {
+  display: flex;
+  justify-content: center;
+  padding-top: 16px;
+}
+
+.vote-tally-container {
+  margin-top: 16px;
+}
+
+.vote-tally-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.vote-tally-name {
+  width: 80px;
+  font-weight: 600;
+}
+
+.vote-tally-bar {
+  height: 24px;
+  border-radius: 4px;
+  background: var(--day-accent);
+  transition: width 0.5s ease;
+  min-width: 4px;
+}
+
+.vote-tally-count {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* ===== Result 屏幕 ===== */
+#screen-result {
+  background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 100%);
+  color: var(--night-text);
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.result-banner {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.result-winner {
+  font-size: 36px;
+  font-weight: 900;
+}
+
+.result-winner.villagers {
+  color: var(--gold);
+  text-shadow: 0 0 30px rgba(212, 168, 56, 0.5);
+}
+
+.result-winner.werewolves {
+  color: var(--day-accent);
+  text-shadow: 0 0 30px rgba(204, 51, 51, 0.5);
+}
+
+.result-roles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 16px;
+  max-width: 700px;
+  width: 100%;
+  justify-items: center;
+}
+
+.result-card {
+  width: 120px;
+  height: 160px;
+  perspective: 600px;
+  cursor: default;
+}
+
+.result-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s ease;
+  transform-style: preserve-3d;
+}
+
+.result-card.flipped .result-card-inner {
+  transform: rotateY(180deg);
+}
+
+.result-card-front,
+.result-card-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.result-card-front {
+  background: var(--night-surface);
+  border: 2px solid var(--night-text-dim);
+  color: var(--night-text-dim);
+  font-size: 16px;
+}
+
+.result-card-back {
+  background: var(--night-surface);
+  transform: rotateY(180deg);
+  border: 2px solid var(--gold);
+}
+
+.result-card-back.werewolf {
+  border-color: var(--day-accent);
+  box-shadow: 0 0 12px rgba(204, 51, 51, 0.3);
+}
+
+.result-card-back.villager {
+  border-color: var(--day-life);
+  box-shadow: 0 0 12px rgba(51, 170, 85, 0.3);
+}
+
+.result-play-again {
+  margin-top: 32px;
+}
+
+/* ===== Toast ===== */
+.toast {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 24px;
+  border-radius: var(--radius);
+  background: var(--day-accent);
+  color: var(--white);
+  font-weight: 600;
+  z-index: 200;
+  animation: slideDown 0.3s ease;
+}
+
+.toast.success {
+  background: var(--day-life);
+}
+
+/* ===== 重连覆盖层 ===== */
+.reconnect-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 150;
+  gap: 16px;
+}
+
+.reconnect-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--night-text-dim);
+  border-top-color: var(--gold);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.reconnect-text {
+  color: var(--night-text);
+  font-size: 16px;
+}

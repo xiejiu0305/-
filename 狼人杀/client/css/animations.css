@@ -1,0 +1,109 @@
+/* ===== 基础动画 ===== */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+  to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes confetti {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes curtainClose {
+  0% { clip-path: inset(0 0 0 0); }
+  100% { clip-path: inset(0 50% 0 50%); }
+}
+
+/* ===== 页面切换动画 ===== */
+.screen-transition-fade {
+  animation: fadeIn 0.4s ease;
+}
+
+.screen-transition-slide {
+  animation: slideUp 0.5s ease;
+}
+
+/* ===== 夜晚到白天过渡 ===== */
+#screen-night.to-day {
+  animation: nightToDay 1s ease forwards;
+}
+
+@keyframes nightToDay {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+#screen-day.from-night {
+  animation: dayFromNight 1s ease forwards;
+}
+
+@keyframes dayFromNight {
+  0% { opacity: 0; background: #0d0d2b; }
+  100% { opacity: 1; background: linear-gradient(180deg, #e8dcc8 0%, #f5f0e8 100%); }
+}
+
+/* ===== 投票淘汰动画 ===== */
+.player-card.eliminated {
+  animation: eliminate 0.6s ease forwards;
+}
+
+@keyframes eliminate {
+  0% { transform: scale(1); border-color: transparent; }
+  50% { transform: scale(1.05); border-color: var(--day-accent); }
+  100% { transform: scale(0.95); border-color: var(--day-accent); opacity: 0.5; }
+}
+
+/* ===== 彩纸 ===== */
+.confetti-piece {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  top: -10px;
+  z-index: 300;
+  animation: confetti 3s ease-in forwards;
+}
+
+/* ===== 猎人开枪 ===== */
+.hunter-shoot-flash {
+  animation: shootFlash 0.2s ease;
+}
+
+@keyframes shootFlash {
+  0%, 100% { background: transparent; }
+  50% { background: rgba(204, 51, 51, 0.3); }
+}
+
+/* ===== 计时器报警脉冲 ===== */
+.timer-bar.danger {
+  animation: pulse 0.5s ease infinite;
+}
+
+/* ===== Toast 自动消失 ===== */
+.toast {
+  animation: slideDown 0.3s ease, fadeIn 2s ease 1.5s forwards;
+}
